@@ -1,0 +1,244 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+dl {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(rgba(51, 141, 220, 0.863), rgba(26, 74, 117, 0.863));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+    width: 680px;
+    height: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.container::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: rgb(32, 236, 73);
+    border-radius: 4px;
+    position: absolute;
+    rotate: 45deg;
+    left: -97px;
+    top: 76px;
+    z-index: -1;
+}
+
+.container.spin::before {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.container.spin::after {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.container::after {
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: rgba(119, 31, 182, 0.863);
+    position: absolute;
+    border-radius: 4px;
+    right: -99px;
+    bottom: -17px;
+    rotate: 45deg;
+    z-index: -1;
+}
+
+
+/* .container:hover::before {
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
+
+.time-wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.time {
+    -moz-appearance: none;
+    margin-top: 4px;
+    width: 160px;
+    height: 54px;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px white;
+    display: flex;
+    font-size: 24px;
+    background-color: transparent;
+    padding: 6px 12px;
+    color: white;
+    caret-color: white;
+}
+
+time::placeholder {
+    color: black;
+}
+
+.timer {
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 84, 187, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+}
+
+span {
+    width: 120px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+span.days {
+    width: 172px;
+}
+
+.timer-text span {
+    font-size: 72px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.timer-text span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timer-text {
+    font-size: 72px;
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+
+.years::after {
+    content: 'Years';
+}
+
+.months::after {
+    content: 'Months';
+}
+
+.days::after {
+    content: 'Days';
+}
+
+.hours::after {
+    content: 'Hours';
+}
+
+.minutes::after {
+    content: 'Minutes';
+}
+
+.seconds::after {
+    content: 'Seconds';
+}
+
+label {
+    color: white;
+}
+
+.start,
+.clear {
+    display: inline-block;
+    width: 160px;
+    height: 64px;
+    padding: 8px 16px;
+    font-size: 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(150, 205, 253, 0.863);
+    border: none;
+    color: black;
+}
+
+.start:hover,
+.clear:hover {
+    cursor: pointer;
+    /* border: 1px solid white; */
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0px 0px 4px white;
+}
+
+.start:active {
+    border-color: transparent;
+}
+
+h1 {
+    color: aliceblue;
+    text-shadow: 0px 0px 2px aliceblue;
+    font-size: 36px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.buttons-wrapper {
+    display: flex;
+    gap: 12px;
+}

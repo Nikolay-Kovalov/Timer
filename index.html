@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose time and date</h1>
+        <div class="time-wrapper">
+            <label>HH.MM.SS
+                  <input class="time time-in" placeholder="00.00.00" value="00.00.00"></input></label>
+            <label>   DD.MM.YYYY
+         <input class="time date" placeholder="01.01.2024" value="01.01.2024"></input></label>
+
+        </div>
+        <div class="timer">
+            <p class="timer-text"><span class="timer-span days">00</span><span class="timer-span hours">00</span><span class="timer-span minutes">00</span><span class="timer-span seconds">00</span></p>
+        </div>
+        <div class="buttons-wrapper"> <button class="start">Start</button>
+            <button class="clear">Clear</button></div>
+
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
